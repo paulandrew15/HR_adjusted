@@ -1,0 +1,80 @@
+/* === style.css === */
+
+/* 1. Base reset & font */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #eef2f7;
+    color: #333;
+}
+
+/* 2. Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background: #1c9711;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 4px;
+}
+
+/* 3. Sidebar links */
+.sidebar a {
+    display: block;
+    padding: 12px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background 0.2s, border-left 0.2s;
+}
+
+/* Highlight active or hover */
+.sidebar a.active,
+.sidebar a:hover {
+    background: #193053;
+    border-left: 3px solid #e8c256;
+}
+
+/* Push the last link (Logout) to the bottom */
+.sidebar a:last-child {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 4. Main content area */
+.main-content {
+    margin-left: 220px;
+    /* sidebar width + gap */
+    padding: 40px 30px;
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* 5. Headings inside main-content */
+.main-content h1,
+.main-content h2 {
+    margin-top: 0;
+    color: #243a5e;
+}
+
+/* 6. Responsive adjustments */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100px;
+        font-size: 13px;
+        padding-top: 20px;
+    }
+
+    .main-content {
+        margin-left: 120px;
+        padding: 20px 10px;
+    }
+}
